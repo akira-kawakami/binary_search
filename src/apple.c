@@ -2,7 +2,7 @@
 
 int n;
 int k;
-int A[100000];
+int A[1000000];
 
 
 int main(){

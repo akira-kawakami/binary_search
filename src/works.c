@@ -4,6 +4,26 @@ int n;
 int k;
 int A[100000];
 
+int p(unsigned int x){
+  int i,m,l;
+  m = x;
+  l = 1;
+  for(i = 0; i < n; i++){
+    if(x < A[i]){
+      l = n + 1;
+      break;
+    }
+    else if(m >= A[i]){
+      m = m - A[i];
+    }
+    else{
+    m = x - A[i];
+    l = l + 1;
+    }
+  }
+    return l <= k;
+}
+
 int main(){
   int i, lb, ub;
   scanf("%d%d", &n, &k);
@@ -21,7 +41,7 @@ int main(){
       lb = m;
     }
   }
-  printf("%d\n", lb);
+  printf("%d\n", ub);
 
   return 0;
 }
